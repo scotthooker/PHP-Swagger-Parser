@@ -55,7 +55,7 @@ class SchemaResolver
         } elseif($type instanceof Object\Schema) {
             $schemaObject = new SchemaObject($objectType);
         
-            foreach(array_keys(get_object_vars($data)) as $propertyKey) {
+            foreach(array_keys(get_object_vars($data)) as $name => $propertyKey) {
                 try {
                     $propertySchema = $this->findSchemaForProperty($type, $propertyKey);
                 } catch(SwaggerException\MissingDocumentPropertyException $e) {
