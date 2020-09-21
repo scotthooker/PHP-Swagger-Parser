@@ -183,7 +183,7 @@ class SchemaResolver
         return $propertySchema;
     }
     
-    protected function resolveReference(Object\ReferentialInterface $reference)
+    public function resolveReference(Object\ReferentialInterface $reference)
     {
         if(!$reference->hasRef()) {
             return $reference;
